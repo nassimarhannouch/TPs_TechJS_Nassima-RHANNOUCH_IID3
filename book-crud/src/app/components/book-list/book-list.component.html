@@ -1,0 +1,97 @@
+<!-- book-list.component.html -->
+<h2>Book List</h2>
+
+<a routerLink="/add" class="add-button">Add Book</a>
+
+<ul>
+  <li *ngFor="let book of books">
+    <span class="book-info">{{book.title}} - {{book.author}}</span>
+    <button class="edit-button" (click)="editBook(book.id!)">Edit</button>
+    <button class="delete-button" (click)="deleteBook(book.id!)">Delete</button>
+  </li>
+</ul>
+
+<!-- CSS intégré -->
+<style>
+/* Titre */
+h2 {
+  text-align: center;
+  color: #4caf50;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Bouton "Add Book" */
+.add-button {
+  display: block;
+  width: 120px;
+  margin: 10px auto 20px auto;
+  padding: 8px 0;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+/* Liste de livres */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Infos du livre */
+.book-info {
+  flex: 1;
+}
+
+/* Boutons Edit/Delete */
+button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #1976d2;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+</style>
